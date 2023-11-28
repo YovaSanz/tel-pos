@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            USUARIOS
+        </title>
+        <link href="com/assets/css/bootstrap.css" rel="stylesheet"></link>
+        <link href="com/assets/vendors/chartjs/Chart.min.css" rel="stylesheet"></link>
+        <link href="com/assets/vendors/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet"></link>
+        <link href="com/assets/css/app.css" rel="stylesheet"></link>
+        
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body>
+        <div id="app">
+            <div class="active" id="sidebar">
+                <div class="sidebar-wrapper active">
+                    <div class="sidebar-header">
+                        <img alt="" src="com/assets/images/telcel.png" srcset="">
+                        </img>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul class="menu">
+                            <li class="sidebar-title">
+                                SERVICIOS
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="ventacontado.html">
+                                    <i data-feather="shopping-cart" width="20">
+                                    </i>
+                                  <span>
+                                    Venta
+                                  </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item has-sub ">
+                                <a class="sidebar-link" href="#">
+                                  <i data-feather="archive" width="20">
+                                  </i>
+                                  <span>Credito y Apartado</span>
+                                </a>
+                                <ul class="submenu">
+                                  <li>
+                                    <a href="ventacredito.html">
+                                      <i data-feather="check-circle" width="20">
+                                      </i>
+                                      <span>
+                                        Generar
+                                      </span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="seguimiento.html">
+                                      <i data-feather="smartphone" width="20">
+                                      </i>
+                                      <span>
+                                        Seguimiento
+                                      </span>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="reparaciones.html">
+                                    <i data-feather="loader" width="20">
+                                    </i>
+                                    <span>
+                                        Reparaciones
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="caja.html">
+                                    <i data-feather="inbox" width="20">
+                                    </i>
+                                    <span>
+                                        Caja
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-title">
+                                ALTAS
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="productos.html">
+                                    <i data-feather="tablet" width="20">
+                                    </i>
+                                    <span>
+                                        Productos
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item ">
+                                <a class="sidebar-link" href="indexdistri.html">
+                                    <i data-feather="truck" width="20">
+                                    </i>
+                                    <span>
+                                        Distribuidor
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item ">
+                                <a class="sidebar-link" href="clientes.html">
+                                    <i data-feather="users" width="20">
+                                    </i>
+                                    <span>
+                                        Clientes
+                                    </span>
+                                </a>
+                            </li>
+                            <div id="privilegio_admin">
+                                <li class="sidebar-title">
+                                    PERSONAL
+                                </li>
+                                <li class="sidebar-item active ">
+                                    <a class="sidebar-link" href="usuarios.html">
+                                        <i data-feather="user-plus" width="20">
+                                        </i>
+                                        <span>
+                                            Usuarios
+                                        </span>
+                                    </a>
+                                </li>
+                            </div>
+                            <li class="sidebar-title">
+                                OTROS
+                            </li>
+                            <li class="sidebar-item ">
+                                <a class="sidebar-link" href="ajustes.html">
+                                    <i data-feather="settings" width="20">
+                                    </i>
+                                    <span>
+                                        Ajustes
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="sidebar-toggler btn x">
+                        <i data-feather="x">
+                        </i>
+                    </button>
+                </div>
+            </div>
+            <div id="main">
+                <nav class="navbar navbar-header navbar-expand navbar-light">
+                    <a class="sidebar-toggler" href="#">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </a>
+                    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="btn navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle nav-link-lg nav-link-user" data-toggle="dropdown" href="#">
+                                    <div class="avatar bg-warning me-3 mr-1">
+                                        <span class="avatar-content">U</span>
+                                        <span class="avatar-status bg-success"></span>
+                                      </div>
+                                    <div class="d-none d-md-block d-lg-inline-block">
+                                        <h5 class="mb-1" id="txtName"></h5>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="ajustes.html"><i data-feather="settings"></i> Ajustes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" id="btnLogout"><i data-feather="log-out"></i> Cerrar Sesion</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="main-content container-fluid">
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-12 col-md-6 order-md-1 order-last">
+                                <h3>
+                                    USUARIOS
+                                </h3>
+                            </div>
+                            <div class="col-12 col-md-6 order-md-2 order-first">
+                                <nav aria-label="breadcrumb" class="breadcrumb-header">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="ventacontado.html">
+                                                Inicio
+                                            </a>
+                                        </li>
+                                        <li aria-current="page" class="breadcrumb-item active">
+                                            Usuario
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <section id="basic-modals">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <div class="col-12">
+                                                <div class="form-group has-icon-left">
+                                                    <label for="searchInput">
+                                                        Buscar:
+                                                    </label>
+                                                    <div class="position-relative">
+                                                        <input class="form-control" id="searchInput" placeholder="Ingrese su busqueda por nombre o usuario" type="search">
+                                                            <div class="form-control-icon">
+                                                                <i data-feather="search">
+                                                                </i>
+                                                            </div>
+                                                        </input>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-secondary block float-right" data-backdrop="false" data-target="#backdrop" data-toggle="modal" type="button">
+                                                <i data-feather="user-plus">
+                                                </i>
+                                            </button>
+                                            <br>
+                                                <div aria-hidden="true" aria-labelledby="myModalLabel50" class="modal fade text-left" id="backdrop" role="dialog" tabindex="-1">
+                                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-dark white">
+                                                                <span class="modal-title" id="agregarcliente">
+                                                                    AGREGAR USUARIO.
+                                                                </span>
+                                                                <button aria-label="Close" class="close btn-dark" data-dismiss="modal" type="button">
+                                                                    <i data-feather="x">
+                                                                    </i>
+                                                                </button>
+                                                            </div>
+                                                            <form action="#">
+                                                                <div class="modal-body">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6 col-12">
+                                                                                <h6>
+                                                                                    PRIVILEGIO
+                                                                                </h6>
+                                                                                <div class="input-group mb-3 ">
+                                                                                    <select class="nieve form-select border border-secondary" id="privilegio" name="nieve">
+                                                                                        <option value="">
+                                                                                            Seleccione...
+                                                                                        </option>
+                                                                                        <option value="1">
+                                                                                            Administrador
+                                                                                        </option>
+                                                                                        <option value="2">
+                                                                                            Normal
+                                                                                        </option>
+                                                                                    </select>
+                                                                                    <label class="input-group-text border border-secondary" for="inputGroupSelect01">
+                                                                                        <i data-feather="smartphone">
+                                                                                        </i>
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="resultado">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6 col-12">
+                                                                                <div class="form-group has-icon-left">
+                                                                                    <label for="email-id-icon">
+                                                                                        Fecha
+                                                                                    </label>
+                                                                                    <div class="position-relative">
+                                                                                        <input class="form-control" id="fecha" placeholder="Nombre " type="date">
+                                                                                        </input>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6 col-12">
+                                                                                <div class="form-group has-icon-left">
+                                                                                    <label for="email-id-icon">
+                                                                                        Nombre Completo:
+                                                                                    </label>
+                                                                                    <div class="position-relative">
+                                                                                        <input class="form-control" id="nombre" placeholder="Nombre completo" type="text">
+                                                                                            <div class="form-control-icon">
+                                                                                                <i data-feather="user-check">
+                                                                                                </i>
+                                                                                            </div>
+                                                                                        </input>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6 col-12">
+                                                                                <div class="form-group has-icon-left">
+                                                                                    <label for="email-id-icon">
+                                                                                        Tel:
+                                                                                    </label>
+                                                                                    <div class="position-relative">
+                                                                                        <input class="form-control" id="telefono" placeholder="Contacto" type="number">
+                                                                                            <div class="form-control-icon">
+                                                                                                <i data-feather="phone">
+                                                                                                </i>
+                                                                                            </div>
+                                                                                        </input>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6 col-12">
+                                                                                <div class="form-group has-icon-left">
+                                                                                    <label for="email-id-icon">
+                                                                                        Usuario
+                                                                                    </label>
+                                                                                    <div class="position-relative">
+                                                                                        <input class="form-control" id="usuario" placeholder="usuario" type="text">
+                                                                                            <div class="form-control-icon">
+                                                                                                <i data-feather="user-check">
+                                                                                                </i>
+                                                                                            </div>
+                                                                                        </input>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6 col-12">
+                                                                                <div class="form-group has-icon-left">
+                                                                                    <label for="email-id-icon">
+                                                                                        Contraseña
+                                                                                    </label>
+                                                                                    <div class="position-relative">
+                                                                                        <input class="form-control" id="contraseña" placeholder="Contraseña" type="password">
+                                                                                            <div class="form-control-icon">
+                                                                                                <i data-feather="unlock">
+                                                                                                </i>
+                                                                                            </div>
+                                                                                        </input>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button class="btn btn-light-secondary" data-dismiss="modal" type="button">
+                                                                        <i class="bx bx-x d-block d-sm-none">
+                                                                        </i>
+                                                                        <span class="d-none d-sm-block">
+                                                                            CANCELAR
+                                                                        </span>
+                                                                    </button>
+                                                                    <button class="btn btn-secondary round mr-1 mb-1 float-right" id="btnSavedis" type="button">
+                                                                        GUARDAR
+                                                                    </button>
+                                                                    <div class="alert alert-danger" id="alert" role="alert" style=" margin: 5px; display: none;">
+                                                                        Ingrese los datos solicitados.
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="basic-modals">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <div class="row" id="table-hover-row">
+                                                <div class="col-12">
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="table-responsive" id="tablausuarios">
+                                                            </div>
+                                                            <br>
+                                                                <nav aria-label="Page navigation">
+                                                                    <ul class="pagination justify-content-center" id="pagination">
+                                                                    </ul>
+                                                                </nav>
+                                                            </br>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Ventana modal de confirmación -->
+                                            <div aria-hidden="true" aria-labelledby="confirmationModalLabel" class="modal fade" id="confirmationModal" tabindex="-1">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="confirmationModalLabel">
+                                                                Confirmar eliminación
+                                                            </h5>
+                                                            <button aria-label="Close" class="btn-close btn-secondary" data-bs-dismiss="modal" type="button">
+                                                                <i data-feather="x">
+                                                                </i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            ¿Estás seguro de eliminar este usuario?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
+                                                                Cancelar
+                                                            </button>
+                                                            <button class="btn btn-danger" href="usuarios.html" id="confirmButton" type="button">
+                                                                Eliminar
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--venta para actualizar -->
+                                            <div aria-hidden="true" aria-labelledby="myModalLabel50" class="modal fade text-left" id="backdrop1" role="dialog" tabindex="-1">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header bg-dark white">
+                                                            <span class="modal-title" id="agregarcliente">
+                                                                ACTUALIZAR.
+                                                            </span>
+                                                            <button aria-label="Close" class="btn-close btn-dark" data-bs-dismiss="modal" type="button">
+                                                                <i data-feather="x">
+                                                                </i>
+                                                            </button>
+                                                        </div>
+                                                        <form action="#">
+                                                            <div class="modal-body">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-12">
+                                                                            <h6>
+                                                                                PRIVILEGIO
+                                                                            </h6>
+                                                                            <div class="input-group mb-3 ">
+                                                                                <select class="nieve form-select border border-secondary" id="privilegio1" name="nieve1">
+                                                                                    <option value="">
+                                                                                        Seleccione...
+                                                                                    </option>
+                                                                                    <option value="1">
+                                                                                        Administrador
+                                                                                    </option>
+                                                                                    <option value="2">
+                                                                                        Normal
+                                                                                    </option>
+                                                                                </select>
+                                                                                <label class="input-group-text border border-secondary" for="inputGroupSelect01">
+                                                                                    <i data-feather="smartphone">
+                                                                                    </i>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="resultado">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-12">
+                                                                            <div class="form-group has-icon-left">
+                                                                                <label for="email-id-icon">
+                                                                                    Fecha
+                                                                                </label>
+                                                                                <div class="position-relative">
+                                                                                    <input class="form-control" id="fecha1" type="date">
+                                                                                    </input>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-12">
+                                                                            <div class="form-group has-icon-left">
+                                                                                <label for="email-id-icon">
+                                                                                    Nombre Completo:
+                                                                                </label>
+                                                                                <div class="position-relative">
+                                                                                    <input class="form-control" id="nombre1" placeholder="Nombre completo" type="text">
+                                                                                        <div class="form-control-icon">
+                                                                                            <i data-feather="user-check">
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </input>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-12">
+                                                                            <div class="form-group has-icon-left">
+                                                                                <label for="email-id-icon">
+                                                                                    Tel:
+                                                                                </label>
+                                                                                <div class="position-relative">
+                                                                                    <input class="form-control" id="telefonos" placeholder="Contacto" type="number">
+                                                                                        <div class="form-control-icon">
+                                                                                            <i data-feather="phone">
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </input>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-12">
+                                                                            <div class="form-group has-icon-left">
+                                                                                <label for="email-id-icon">
+                                                                                    Usuario
+                                                                                </label>
+                                                                                <div class="position-relative">
+                                                                                    <input class="form-control" id="usuario1" placeholder="usuario" type="text">
+                                                                                        <div class="form-control-icon">
+                                                                                            <i data-feather="user-check">
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </input>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6 col-12">
+                                                                            <div class="form-group has-icon-left">
+                                                                                <label for="email-id-icon">
+                                                                                    Contraseña
+                                                                                </label>
+                                                                                <div class="position-relative">
+                                                                                    <input class="form-control" id="contraseña1" placeholder="Contraseña" type="text">
+                                                                                        <div class="form-control-icon">
+                                                                                            <i data-feather="unlock">
+                                                                                            </i>
+                                                                                        </div>
+                                                                                    </input>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button class="btn btn-light-secondary" data-bs-dismiss="modal" type="button">
+                                                                    CERRAR
+                                                                </button>
+                                                                <button class="btn btn-outline-dark round mr-1 mb-1 float-right" id="btnSavedis1" type="button">
+                                                                    MODIFICAR
+                                                                </button>
+                                                                <div class="alert alert-danger" id="alerts" role="alert" style=" margin: 5px; display: none;">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <script>
+                        // ...eliminar usuario
+function deleteRow(userId) {
+  const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+  //const modal = document.getElementById('confirmationModal');
+  const confirmButton = document.getElementById('confirmButton');
+  confirmButton.dataset.userId = userId;
+  // Abrir la ventana modal
+  modal.show();
+  
+  confirmButton.addEventListener('click', function () {
+  // Obtener el userId del atributo data
+  window.electronAPI.userDelete(userId)
+    .then((result) => {
+      if (result) {
+        // Eliminación exitosa, eliminar la fila de la tabla
+        const row = document.getElementById(`row-${userId}`);
+        if (row) {
+          row.remove();
+          generateTable(data.slice(0, itemsPerPage));
+        }
+        // Recargar la página principal
+          location.reload();
+      } else {
+        // Ocurrió un error durante la eliminación
+        console.error('Error al eliminar el registro');
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+  // Cerrar la ventana modal
+  const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+  modal.hide();
+
+  });
+
+}
+
+
+
+// Función para actualizar el registro
+function updateRow(userId) {
+  const modal = new bootstrap.Modal(document.getElementById('backdrop1'));
+  const confirmButton = document.getElementById('btnSavedis1');
+  confirmButton.dataset.userId = userId;
+  // Obtener la fecha actual según la fecha de la pc
+   const fechaActual= new Date();
+   const year = fechaActual.getFullYear();
+   const month = String(fechaActual.getMonth() + 1).padStart(2, '0'); // Sumar 1 al mes ya que los meses comienzan en 0
+   const day = String(fechaActual.getDate()).padStart(2, '0');
+   const FormatoDate = `${year}-${month}-${day}`;
+   const dateInput = document.getElementById('fecha1');
+   dateInput.value = FormatoDate;
+
+
+  window.electronAPI.getUserData(userId)   //metodo para obtener los datos de las cajas de texto 
+  .then((users) => {
+    // Llenar los campos del formulario con los datos del usuario
+    document.getElementById('nombre1').value = users.Nombrecompleto;
+    document.getElementById('telefonos').value = users.Telefono;
+    document.getElementById('usuario1').value = users.user;
+    document.getElementById('contraseña1').value = users.password;
+    document.getElementById('privilegio1').value = users.nivel_usuario;
+    // Abrir la ventana modal después de obtener los datos del usuario
+    modal.show();
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+  confirmButton.addEventListener('click', function () {
+    // Obtener el userId del atributo data
+    const userId = confirmButton.dataset.userId;
+    // Obtener los nuevos datos del formulario de actualización
+    const newName = document.getElementById('nombre1').value;
+    const newTelefono = document.getElementById('telefonos').value;
+    const newUsuario = document.getElementById('usuario1').value;
+    const newPassword = document.getElementById('contraseña1').value;
+    const newDate = document.getElementById('fecha1').value;
+    const newPriv = document.getElementById('privilegio1').value;
+    const newData = {
+      Nombrecompleto: newName,
+      Telefono: newTelefono,
+      user : newUsuario,
+      password :newPassword,
+      fechaderegistro :newDate,
+      nivel_usuario: newPriv
+      
+    };  //para evitar que se manden campos vacios
+    if (newName.trim() === '' || newTelefono.trim() === '' || newUsuario.trim() === '' || newPassword.trim() === '' || newDate.trim() === '' || newPriv.trim() === '') {
+    const alertElement = document.getElementById('alerts');
+    alertElement.textContent = 'Por favor, complete todos los campos requeridos.';
+    alertElement.style.display = 'block';
+    return; 
+  }
+
+    // Llamar a la función de actualización en el proceso principal
+    window.electronAPI.userUpdate(userId, newData)
+      .then((result) => {
+        if (result) {
+          // Actualización exitosa, cerrar la ventana modal
+          modal.hide();
+          // Actualizar la fila en la tabla con los nuevos datos
+          const row = document.getElementById(`row-${userId}`);
+          if (row) {
+            row.querySelector('.nombre1').textContent = newName;
+            row.querySelector('.telefonos').textContent = newTelefono;
+            row.querySelector('.usuario1').textContent = newUsuario;
+            row.querySelector('.contraseña1').textContent = newPassword;
+            row.querySelector('.fecha1').textContent= newDate;
+//Actualizar el valor seleccionado del elemento <select>
+         row.querySelector('.privilegio1').value = newPriv;
+          }
+          location.reload();
+          // Mostrar un mensaje de éxito o realizar alguna otra acción
+          console.log('Registro actualizado correctamente');
+        } else {
+          // Ocurrió un error durante la actualización
+          console.error('Error al actualizar el registro');
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+}
+
+
+
+
+
+
+// ..
+                    </script>
+                    <script src="com/assets/js/feather-icons/feather.min.js">
+                    </script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js">
+                    </script>
+                    <script src="com/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js">
+                    </script>
+                    <script src="com/assets/js/app.js">
+                    </script>
+                    <script src="com/assets/js/main.js">
+                    </script>
+                    <script src="./home.js">
+                    </script>
+                    <script src="./usuarios.js">
+                    </script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

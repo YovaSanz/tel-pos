@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VENTA CREDITO</title>
+
+
+  <link rel="stylesheet" href="com/assets/vendors/chartjs/Chart.min.css">
+
+  <link rel="stylesheet" href="com/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+  <link rel="stylesheet" href="com/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="com/assets/css/app.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="active" id="sidebar">
+      <div class="sidebar-wrapper active">
+        <div class="sidebar-header">
+          <img alt="telcel" src="com/assets/images/telcel.png" srcset="" width="170rem">
+          </img>
+        </div>
+        <div class="sidebar-menu">
+          <ul class="menu">
+            <li class="sidebar-title">
+              SERVICIOS
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="ventacontado.html">
+                    <i data-feather="shopping-cart" width="20">
+                    </i>
+                  <span>
+                    Venta
+                  </span>
+                </a>
+            </li>
+            <li class="sidebar-item has-sub active ">
+              <a class="sidebar-link" href="#">
+                <i data-feather="archive" width="20">
+                </i>
+                <span>Credito y Apartado</span>
+              </a>
+              <ul class="submenu active">
+                <li>
+                  <a href="ventacredito.html">
+                    <i data-feather="check-circle" width="20">
+                    </i>
+                    <span>
+                      Generar
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="seguimiento.html">
+                    <i data-feather="smartphone" width="20">
+                    </i>
+                    <span>
+                      Seguimiento
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="reparaciones.html">
+                <i data-feather="loader" width="20">
+                </i>
+                <span>
+                  Reparaciones
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="caja.html">
+                <i data-feather="inbox" width="20">
+                </i>
+                <span>
+                  Caja
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-title">
+              ALTAS
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="productos.html">
+                    <i data-feather="tablet" width="20">
+                    </i>
+                    <span>
+                        Productos
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar-item ">
+              <a class="sidebar-link" href="indexdistri.html">
+                <i data-feather="truck" width="20">
+                </i>
+                <span>
+                  Distribuidor
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-item ">
+              <a class="sidebar-link" href="clientes.html">
+                <i data-feather="users" width="20">
+                </i>
+                <span>
+                  Clientes
+                </span>
+              </a>
+            </li>
+            <div id="privilegio_admin">
+              <li class="sidebar-title">
+                PERSONAL
+              </li>
+              <li class="sidebar-item ">
+                <a class="sidebar-link" href="usuarios.html">
+                  <i data-feather="user-plus" width="20">
+                  </i>
+                  <span>
+                    Usuarios
+                  </span>
+                </a>
+              </li>
+            </div>
+            <li class="sidebar-title">
+              OTROS
+            </li>
+            <li class="sidebar-item ">
+              <a class="sidebar-link" href="ajustes.html">
+                <i data-feather="settings" width="20">
+                </i>
+                <span>
+                  Ajustes
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button class="sidebar-toggler btn x">
+          <i data-feather="x">
+          </i>
+        </button>
+      </div>
+    </div>
+
+
+    <div id="main">
+      <nav class="navbar navbar-header navbar-expand navbar-light">
+        <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+        <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <div class="avatar bg-warning me-3 mr-1">
+                  <span class="avatar-content">U</span>
+                  <span class="avatar-status bg-success"></span>
+                </div>
+                <div class="d-none d-md-block d-lg-inline-block">
+                  <h5 class="mb-1" id="txtName"></h5>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="ajustes.html"><i data-feather="settings"></i> Ajustes</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" id="btnLogout"><i data-feather="log-out"></i> Cerrar Sesion</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div class="main-content container-fluid pt-2 pb-0">
+        <div class="page-title">
+          <div class="row">
+            <div class="col-12 col-md-6 order-md-1">
+              <h3>Credito y Apartado</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="table-striped">
+          <div class="card mb-1">
+            <div class="card-content">
+              <div class="card-body">
+                  <div class="row align-items-end ">
+                    <div class="col-md-8">
+                      <div class="form-group has-icon-left">
+                        <label for="email-id-icon">Código</label>
+                        <div class="input-group">
+                          <div class="position-relative">
+                            <input type="text" class="form-control " placeholder="Ingrese código" id="codigoBarra" autofocus>
+                            <div class="form-control-icon">
+                              <i data-feather="clipboard"></i>
+                            </div>
+                          </div>
+
+                          <div class="modal fade text-left" id="primary" tabindex="-1" aria-labelledby="myModalLabel160"
+                            style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+                              role="document">
+                              <div class="modal-content">
+                                <div class="modal-header bg-primary">
+                                  <h5 class="modal-title white" id="isPhoneHead">Informacion Generar del Celular</h5>
+                                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round" class="feather feather-x">
+                                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="modal-body" id="modalBodyInfoPhoneCli">
+
+                                  <div class="row">
+                                    <div class="col-sm-3">
+                                      <div class="form-group">
+                                        <label for="disabledInput">Codigo</label>
+                                        <p class="form-control-static" id="codigoInfoCelCompra">0</p>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                      <div class="form-group">
+                                        <label for="disabledInput">Stock</label>
+                                        <p class="form-control-static" id="stockInfoCelCompra">0</p>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="col-sm-6 ">
+                                      <div class="form-group">
+                                        <label for="disabledInput">Precio</label>
+                                        <p class="form-control-static" id="precioInfoCelCompra">$ <span>0.00</span></p>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-3 d-none" id="descuentoInfoCelCompraDisplay">
+                                      <div class="form-group">
+                                        <label for="disabledInput">Descuento</label>
+                                        <p class="form-control-static" id="descuentoInfoCelCompra">$ 0.00</p>
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-sm-3">
+                                      <div class="form-group">
+                                        <label for="disabledInput">Marca</label>
+                                        <p class="form-control-static" id="marcaInfoCelCompra">marca</p>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                      <div class="form-group">
+                                        <label for="disabledInput">Modelo</label>
+                                        <p class="form-control-static" id="modeloInfoCelCompra">modelo</p>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="col-sm-6 ">
+                                      <div class="form-group">
+                                        <label for="disabledInput">Descripcion</label>
+                                        <p class="form-control-static" id="descripcionInfoCelCompra">Descripcion</p>
+                                      </div>
+                                    </div>
+
+
+                                    <div class="col-sm-3 d-none" id="totalInfoCelCompraDisplay">
+                                      <div class="form-group">
+                                        <label for="disabledInput">Total</label>
+                                        <p class="form-control-static" id="totalInfoCelCompra">$ 00.00</p>
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                        <h6>IMEI</h6>
+                                        <div class="form-group position-relative has-icon-left">
+                                          <input type="text" class="form-control"
+                                            placeholder="Introduce el codigo IMEI del celular" id="imeiPhoneInfo">
+                                          <div class="form-control-icon">
+                                            <i data-feather="smartphone"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+                                  <div class="divider divider-left-center">
+                                    <div class="divider-text">Informacion del Cliente</div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                        <h6>Nombre(s)</h6>
+                                        <div class="form-group position-relative has-icon-left">
+                                          <input type="text" class="form-control" id="nombreInfoCliCompra">
+                                          <div class="form-control-icon">
+                                            <i data-feather="user"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                        <h6>Apellidos</h6>
+                                        <input type="text" class="form-control pl-2" id="apellidosInfoCliCompra">
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                        <h6>Telefono</h6>
+                                        <div class="form-group position-relative has-icon-left">
+                                          <input type="number" class="form-control" id="telefonoInfoCliCompra">
+                                          <div class="form-control-icon">
+                                            <i data-feather="phone"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-sm-8">
+                                      <div class="form-group">
+                                        <h6>Direccion</h6>
+                                        <div class="form-group position-relative has-icon-left">
+                                          <input type="text" class="form-control" id="direccionInfoCliCompra">
+                                          <div class="form-control-icon">
+                                            <i data-feather="map-pin"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-sm-3 d-none" id="idInfoCliCompraDisplay">
+                                      <div class="form-group">
+                                        <label for="basicInput">ID</label>
+                                        <input type="text" class="form-control pl-2" id="idInfoCliCompra" readonly>
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+                                </div>
+                                <div class="modal-footer justify-content-between">
+
+                                  <div>
+                                    <button type="button" class="btn icon icon-left btn-outline-secondary"
+                                      id="btnBuscarClienteP" data-toggle="modal" data-backdrop="true"
+                                      data-target="#buscarClienteP">
+                                      <i data-feather="search"></i> Buscar Cliente
+                                    </button>
+
+                                    <button type="button" class="btn icon icon-left btn-outline-secondary"
+                                      onclick="btnLimpiarInfo()">
+                                      <i data-feather="refresh-ccw"></i> Limpiar
+                                    </button>
+
+                                    <div class="modal fade text-left" id="buscarClienteP" tabindex="-1"
+                                      aria-labelledby="myModalLabel17" aria-hidden="true" style="display: none;">
+                                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+                                        role="document">
+                                        <div class="modal-content" id="modalBuscarCliente">
+                                          <div class="modal-header bg-warning white">
+                                            <span class="modal-title" id="tBuscarC">BUSCAR CLIENTE.</span>
+                                            <button type="button" class="close btn-dark" data-dismiss="modal"
+                                              aria-label="Close">
+                                              <i data-feather="x"></i>
+                                            </button>
+                                          </div>
+
+                                          <div class="modal-body">
+                                            <div class="col-12">
+                                              <div class="form-group has-icon-left">
+                                                <label for="searchInputClient">Buscar:</label>
+                                                <div class="position-relative">
+                                                  <input type="search" class="form-control"
+                                                    placeholder="Busqueda por nombre o id" id="searchInputClient">
+                                                  <div class="form-control-icon">
+                                                    <i data-feather="search"></i>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="table-responsive" id="tbClientesP">
+
+                                            </div>
+
+                                          </div>
+
+                                          <div class="modal-footer justify-content-between">
+                                            <button type="button" class="btn icon icon-left btn-outline-secondary m-2"
+                                              id="btnAgregarCliente" onclick="formRegistroCliente()">
+                                              <i data-feather="user-plus"></i> Nuevo Cliente
+                                            </button>
+                                            <nav aria-label="Page navigation">
+                                              <ul class="pagination justify-content-center mb-0" id="paginationTbCP">
+                                              </ul>
+                                            </nav>
+                                            <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
+                                              <i class="bx bx-x d-block d-sm-none"></i>
+                                              <span class="d-none d-sm-block">CANCELAR</span>
+                                            </button>
+                                          </div>
+                                        </div>
+
+
+
+                                        <div class="modal-content d-none" id="modalAgregarCliente">
+                                          <div class="modal-header bg-dark white">
+                                            <span class="modal-title" id="tBuscarC">REGISTRAR CLIENTE.</span>
+                                            <button type="button" class="close btn-dark" data-dismiss="modal"
+                                              aria-label="Close">
+                                              <i data-feather="x"></i>
+                                            </button>
+                                          </div>
+
+                                          <form action="#">
+                                            <div class="modal-body">
+                                              <div class="container-fluid">
+                                                <div class="row">
+                                                  <div class="col-md-6 col-12">
+                                                    <div class="form-group has-icon-left">
+                                                      <label for="email-id-icon">Nombre(s):</label>
+                                                      <div class="position-relative">
+                                                        <input type="text" class="form-control" placeholder="Nombre(s)"
+                                                          id="nombreClienteN">
+                                                        <div class="form-control-icon">
+                                                          <i data-feather="user-check"></i>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-12">
+                                                    <div class="form-group has-icon-left">
+                                                      <label for="email-id-icon">Apellidos:</label>
+                                                      <div class="position-relative">
+                                                        <input type="text" class="form-control" placeholder="Apellidos"
+                                                          id="apellidosClienteN">
+                                                        <div class="form-control-icon">
+                                                          <i data-feather="user-check"></i>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-12">
+                                                    <div class="form-group has-icon-left">
+                                                      <label for="email-id-icon">Dirección</label>
+                                                      <div class="position-relative">
+                                                        <input type="text" class="form-control"
+                                                          placeholder="C. Miguel Hidalgo 149, Centro, 41300 Tlapa, Gro."
+                                                          id="direccionClienteN">
+                                                        <div class="form-control-icon">
+                                                          <i data-feather="unlock"></i>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-12">
+                                                    <div class="form-group has-icon-left">
+                                                      <label for="email-id-icon">Tel:</label>
+                                                      <div class="position-relative">
+                                                        <input type="number" class="form-control" placeholder="Contacto"
+                                                          id="telClienteN">
+                                                        <div class="form-control-icon">
+                                                          <i data-feather="phone"></i>
+                                                        </div>
+
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-light-secondary"
+                                                id="btnCancelarRegistroC" onclick="cerrarRegistroCliente()">
+                                                <i class="bx bx-x d-block d-sm-none"></i>
+                                                <span class="d-none d-sm-block">CANCELAR</span>
+                                              </button>
+                                              <button type="button" class="btn btn-secondary round mr-1 mb-1 float-right"
+                                                id="btnSavedis" onclick="registroCliente()">
+                                                GUARDAR
+                                              </button>
+
+                                              <div class="alert alert-danger m-2" role="alert" id="alertRegistroC"
+                                                style="display: none;">
+                                                Ingrese los datos solicitados.
+                                              </div>
+
+                                            </div>
+                                          </form>
+                                        </div>
+
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                      id="switchSaveInfoCliCompra" checked>
+                                    <label class="form-check-label" for="switchSaveInfoCliCompra">Guardar Cliente</label>
+                                  </div>
+
+                                  <div>
+                                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                      <i class="bx bx-x d-block d-sm-none"></i>
+                                      <span class="d-none d-sm-block">Cancelar</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-primary ml-1" id="btnAceptarInfoCel">
+                                      <i class="bx bx-check d-block d-sm-none"></i>
+                                      <span class="d-none d-sm-block">Aceptar</span>
+                                    </button>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--<button class="btn btn-outline-secondary" type="button" id="btnCodigoBarra">Agregar</button>-->
+                          <button type="button" class="btn icon icon-left btn-outline-secondary" id="btnSearchProduct"
+                            data-toggle="modal" data-backdrop="true" data-target="#searchProducts">
+                            <i data-feather="search"></i> Buscar
+                          </button>
+
+                          <div class="modal fade text-left " id="searchProducts" tabindex="-1"
+                            aria-labelledby="myModalLabel17" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+                              role="document">
+                              <div class="modal-content" id="modalBuscarProduct">
+                                <div class="modal-header bg-dark white">
+                                  <span class="modal-title" id="tBuscarC">BUSCAR PRODUCTO.</span>
+                                  <button type="button" class="close btn-dark" data-dismiss="modal" aria-label="Close">
+                                    <i data-feather="x"></i>
+                                  </button>
+                                </div>
+
+                                <div class="modal-body">
+                                  <div class="col-12">
+                                    <div class="form-group has-icon-left">
+                                      <label for="searchInputProduct">Buscar:</label>
+                                      <div class="position-relative">
+                                        <input type="search" class="form-control" placeholder="Busqueda por nombre o id"
+                                          id="searchInputProduct">
+                                        <div class="form-control-icon">
+                                          <i data-feather="search"></i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="table-responsive" id="tbSearchProducts" name="tbSearchProducts">
+
+                                  </div>
+                                  <br>
+
+                                </div>
+
+                                <div class="modal-footer justify-content-between">
+                                  <button type="button" class="btn icon icon-left btn-outline-secondary m-2 d-none"
+                                    id="btnAgregarCliente">
+                                    <i data-feather="user-plus"></i> Agregar Producto
+                                  </button>
+                                  <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center mb-0" id="paginationTbP">
+                                    </ul>
+                                  </nav>
+                                  <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
+                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                    <span class="d-none d-sm-block">CANCELAR</span>
+                                  </button>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="form-group has-icon-left">
+                        <label>Fecha:</label>
+                        <div class="input-group">
+                          <input type="date" class="form-control" id="fecha" readonly>
+                          <div class="form-control-icon">
+                            <i data-feather="calendar"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- table striped -->
+                  <div class="table-responsive" style="height: 45vh; ">
+                    <table class="table table-striped table-light mb-0" id="tableProductos">
+                      <thead class="sticky-top">
+                        <tr>
+                          <th class="px-2">CÓDIGO</th>
+                          <th>ARTICULO</th>
+                          <th>DECRIPCION</th>
+                          <th>PRECIO</th>
+                          <th class="px-2">CANTIDAD</th>
+                          <th>TOTAL</th>
+                          <th class="px-1"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbProductos">
+
+                      </tbody>
+                    </table>
+                  </div>
+
+              </div>
+
+              <div class="card-footer">
+                
+              <div class="row">
+                  <div class="col-md-7 col-12">
+                    <div class="row justify-content-between align-items-center mb-3">
+
+                      <div class="col-md-4">
+                        
+                        <button type="button" class="btn btn-outline-secondary" id="btnBuscarCliente" >
+                          <i data-feather="users"></i>  Buscar
+                        </button>
+
+                        <div class="modal fade text-left" id="buscarCliente" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true" style="display: none;">
+                          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+                            <div class="modal-content" id="modalBuscarCliente1">
+                                <div class="modal-header bg-dark white">
+                                  <span class="modal-title" id="tBuscarC">BUSCAR CLIENTE.</span>
+                                  <button type="button" class="close btn-dark" data-dismiss="modal" aria-label="Close">
+                                    <i data-feather="x"></i>
+                                  </button>
+                                </div>
+
+                                <div class="modal-body">
+                                  <div class="col-12">
+                                    <div class="form-group has-icon-left">
+                                      <label for="searchInputClient">Buscar:</label>
+                                      <div class="position-relative">
+                                        <input type="search" class="form-control" placeholder="Busqueda por nombre o id"
+                                          id="searchInputClient">
+                                        <div class="form-control-icon">
+                                          <i data-feather="search"></i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="table-responsive" id="tbClientes">
+
+                                  </div>
+
+                                </div>
+
+                                <div class="modal-footer justify-content-between">
+                                  <button type="button" class="btn icon icon-left btn-outline-secondary m-2"
+                                    id="btnAgregarCliente" onclick="formRegistroCliente1()">
+                                    <i data-feather="user-plus"></i> Nuevo Cliente
+                                  </button>
+                                  <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center mb-0" id="paginationTbC">
+                                    </ul>
+                                  </nav>
+                                  <button type="button" class="btn btn-light-secondary" onclick="buscarCliente.hide();">
+                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                    <span class="d-none d-sm-block">CANCELAR</span>
+                                  </button>
+                                </div>
+                            </div>
+
+                            <div class="modal-content d-none" id="modalAgregarCliente1">
+                                <div class="modal-header bg-dark white">
+                                  <span class="modal-title" id="tBuscarC">REGISTRAR CLIENTE.</span>
+                                  <button type="button" class="close btn-dark" data-dismiss="modal" aria-label="Close">
+                                    <i data-feather="x"></i>
+                                  </button>
+                                </div>
+
+                                <form action="#">
+                                  <div class="modal-body">
+                                    <div class="container-fluid">
+                                      <div class="row">
+                                        <div class="col-md-6 col-12">
+                                          <div class="form-group has-icon-left">
+                                            <label for="email-id-icon">Nombre(s):</label>
+                                            <div class="position-relative">
+                                              <input type="text" class="form-control" placeholder="Nombre(s)"
+                                                id="nombreClienteN1">
+                                              <div class="form-control-icon">
+                                                <i data-feather="user-check"></i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                          <div class="form-group has-icon-left">
+                                            <label for="email-id-icon">Apellidos:</label>
+                                            <div class="position-relative">
+                                              <input type="text" class="form-control" placeholder="Apellidos"
+                                                id="apellidosClienteN1">
+                                              <div class="form-control-icon">
+                                                <i data-feather="user-check"></i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                          <div class="form-group has-icon-left">
+                                            <label for="email-id-icon">Dirección</label>
+                                            <div class="position-relative">
+                                              <input type="text" class="form-control"
+                                                placeholder="C. Miguel Hidalgo 149, Centro, 41300 Tlapa, Gro."
+                                                id="direccionClienteN1">
+                                              <div class="form-control-icon">
+                                                <i data-feather="unlock"></i>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                          <div class="form-group has-icon-left">
+                                            <label for="email-id-icon">Tel:</label>
+                                            <div class="position-relative">
+                                              <input type="number" class="form-control" placeholder="Contacto"
+                                                id="telClienteN1">
+                                              <div class="form-control-icon">
+                                                <i data-feather="phone"></i>
+                                              </div>
+
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-light-secondary" id="btnCancelarRegistroC"
+                                      onclick="cerrarRegistroCliente1()">
+                                      <i class="bx bx-x d-block d-sm-none"></i>
+                                      <span class="d-none d-sm-block">CANCELAR</span>
+                                    </button>
+                                    <button type="button" class="btn btn-secondary round mr-1 mb-1 float-right"
+                                      onclick="registroCliente1()">
+                                      GUARDAR
+                                    </button>
+
+                                    <div class="alert alert-danger m-2" role="alert" id="alertRegistroC1"
+                                      style="display: none;">
+                                      Ingrese los datos solicitados.
+                                    </div>
+
+                                  </div>
+                                </form>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="inputApartar" onchange="checkApartadoCredito(this)" checked>
+                            <label class="form-check-label" for="inputApartar">Apartar producto</label>
+                          </div>
+                      </div>                        
+
+                      <div class="col-md-4">
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="inputCredito" onchange="checkApartadoCredito(this)">
+                            <label class="form-check-label" for="inputCredito">Pago a Credito</label>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 mb-2">
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text px-2">ID</span>
+                          <input type="text" class="form-control" id="idCliente" readonly>
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-9 mb-2">
+                        <div class="input-group">
+                          <span class="input-group-text">
+                            <i data-feather="user"></i>
+                          </span>
+                          <input type="text" class="form-control" id="nombreCliente" placeholder="Cliente" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-lg-7 pr-1">
+                        <div class="input-group">
+                          <span class="input-group-text">
+                            <i data-feather="map-pin"></i>
+                          </span>
+                          <input type="text" class="form-control" id="direccionCliente" placeholder="Direccion" readonly>
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-5 pl-1">
+                        <div class="input-group">
+                          <span class="input-group-text">
+                            <i data-feather="phone"></i>
+                          </span>
+                          <input type="text" class="form-control" id="telCliente" placeholder="Telefono" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div id="formCredito" class="d-none">
+                      <hr class="border border-primary border-3 opacity-75"/>
+
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputMensualidad">Mensualidades</label>
+                            <select class="form-select" id="inputMensualidad">
+                              <option value="3">3 Meses</option>
+                              <option value="6">6 Meses</option>
+                              <option value="9">9 Meses</option>
+                              <option value="12">12 Meses</option>
+                              <option value="18">18 Meses</option>
+                              <option value="24">24 Meses</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 mb-2">
+                          <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text pr-1">Tasa de interés</span>
+                            <input type="number" class="form-control px-2" id="inputIntereses" min=0 value=10>
+                            <span class="input-group-text px-0"><i data-feather="percent"></i></span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <ul class="list-group">
+                        <li class="list-group-item list-group-item-primary">
+                          $<span id="pagoMeses">0</span> x <span id="meses">3meses</span> = <b> $<span id="totalCredito">0</span></b>
+                        </li>
+                      </ul>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-5 col-12">
+                    
+                  
+                  <div class="form-group has-icon-left">
+                    <label for="email-id-icon">Total:</label>
+                    <div class="position-relative">
+                      <input type="text" class="form-control" id="total" readonly="readonly">
+                      <div class="form-control-icon">
+                        <i data-feather="dollar-sign"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                    
+
+                    <div class="form-group has-icon-left">
+                      <label for="email-id-icon">Abono:</label>
+                      <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Ingrese la cantidad" id="abono">
+                        <div class="form-control-icon">
+                          <i data-feather="dollar-sign"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group has-icon-left">
+                          <label for="email-id-icon">Pago con:</label>
+                          <div class="position-relative">
+                            <input type="number" class="form-control" placeholder="Ingrese la cantidad" id="pagocon">
+                            <div class="form-control-icon">
+                              <i data-feather="dollar-sign"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="form-group has-icon-left">
+                          <label for="email-id-icon">Cambio:</label>
+                          <div class="position-relative">
+                            <input type="text" class="form-control" id="cambio" readonly="readonly">
+                            <div class="form-control-icon">
+                              <i data-feather="dollar-sign"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-12 d-flex justify-content-end">
+                      <button type="reset" class="btn btn-light mx-3 mb-1 px-4" id="btnCancelarVenta">Cancelar</button>
+                      <button type="button" class="btn btn-primary mx-1 mb-1 disabled" id="btnGenerarVenta">Generar Venta</button>
+
+                      <div class="modal fade" id="ventaGenerada" tabindex="-1" role="dialog" aria-labelledby="myModalLabel110" aria-hidden="true" >
+                        <div class="modal-dialog" role="document" data-backdrop="false">
+                          <div class="alert"  id="txtModalVentaGeneradaAlert">
+                            <h4 class="alert-heading"><i data-feather="check-circle"></i> Venta Exitosa</h4>
+                            <p style="color: #222222;">Se guardo correctamente <span id="txtModalVentaGenerada"></span></p>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+    <div class="alert alert-light-warning color-warning position-absolute d-none" id="alertNoHayStock" style="bottom: 15px; left: 50vw;"><i data-feather="alert-octagon" ></i> Ya no hay STOCK.</div>
+    <div class="alert alert-light-danger color-danger position-absolute d-none" id="alertNoExiste" style="bottom: 15px; left: 50vw;"><i data-feather="x-octagon" ></i> Codigo No Existe o Incorrecto.</div>
+  </div>
+
+
+  <script>
+    function toggleTextBox() {
+      var selectElement = document.getElementById("mySelect");
+      var textBox = document.getElementById("myTextBox");
+
+      if (selectElement.value !== "") {
+        textBox.classList.remove("d-none");
+      } else {
+        textBox.classList.add("d-none");
+      }
+    }
+  </script>
+
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+  <script src="com/assets/js/feather-icons/feather.min.js"></script>
+  <script src="com/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+  <!--<script src="com/assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="com/assets/vendors/apexcharts/apexcharts.min.js"></script>
+    <script src="com/assets/js/pages/dashboard.js"></script>-->
+
+  <script src="com/assets/js/app.js"></script>
+  <script src="com/assets/js/main.js"></script>
+
+  <script src="./home.js"></script>
+  <script src="./ventacredito.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "tel-pos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha3",
+    "boxicons": "^2.1.4",
+    "electron": "^24.3.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "mariadb": "^3.1.2"
+  }
+}

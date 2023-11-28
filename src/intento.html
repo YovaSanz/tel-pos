@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PRODUCTOS</title>
+    
+    <link rel="stylesheet" href="com/assets/css/bootstrap.css">
+    
+    <link rel="stylesheet" href="com/assets/vendors/chartjs/Chart.min.css">
+
+    <link rel="stylesheet" href="com/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="com/assets/css/app.css">
+    <link rel="shortcut icon" href="com/assets/images/favicon.svg" type="image/x-icon">
+</head>
+<body>
+<div id="app">
+       <div id="sidebar" class='active'>
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <img src="com/assets/images/telcel.png" alt="" srcset="">
+                </div>
+                <div class="sidebar-menu">
+                     <ul class="menu">
+                        <li class='sidebar-title'>SERVICIOS</li>
+                         <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i data-feather="shopping-cart" width="20"></i> 
+                        <span>VENTA</span>
+                    </a>
+                    
+                    <ul class="submenu ">
+                        
+                        <li>
+                           <a href="ventacontado.html">
+                           <i data-feather="check-circle" width="20"></i>
+                           <span>Contado</span>
+                       </a>
+                        </li>
+                         <li>
+                           <a href="ventacredito.html">
+                           <i data-feather="smartphone" width="20"></i>
+                           <span>Crédito</span>
+                       </a>
+                        </li>
+                         <li>
+                           <a href="ventaapartado.html">
+                           <i data-feather="archive" width="20"></i>
+                           <span>Apartado</span>
+                       </a>
+                        </li>  
+                    </ul>
+                </li>
+
+                         <li class="sidebar-item">
+                            <a href="reparaciones.html" class='sidebar-link'>
+                                <i data-feather="loader" width="20"></i> 
+                                <span>Reparaciones</span>
+                        
+                            </a>
+                        </li>
+                          <li class="sidebar-item">
+                            <a href="caja.html" class='sidebar-link'>
+                                <i data-feather="inbox" width="20"></i> 
+                                <span>Caja</span>
+                        
+                            </a>
+                        </li>
+                        <li class='sidebar-title'>ALTAS</li>
+                        <li class="sidebar-item active  has-sub ">
+                            <a href="#" class='sidebar-link'>
+                                <i data-feather="tablet" width="20"></i> 
+                                <span>Productos</span>
+                            </a>
+                            <ul class="submenu active">
+                                 <li>
+                                <a href="productos.html" >
+                                <i data-feather="plus-circle" width="20"></i> 
+                                <span>Agregar</span>
+                        
+                               </a>
+                                
+                                </li>
+                                <li>
+                                <a href="inventario.html">
+                                <i data-feather="clipboard" width="20"></i> 
+                                <span>Inventario</span>
+                        
+                               </a>
+                                
+
+                                </li>
+
+                    
+                            </ul> 
+                        </li>
+                        <li class="sidebar-item ">
+                            <a href="indexdistri.html" class='sidebar-link'>
+                                <i data-feather="truck" width="20"></i> 
+                                <span>Distribuidor</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item  ">
+                            <a href="clientes.html" class='sidebar-link'>
+                                <i data-feather="users" width="20"></i> 
+                                <span>Clientes</span>
+                            </a>
+                        </li>
+
+                        <div id="privilegio_admin">
+                        <li class='sidebar-title'>PERSONAL</li>
+                        <li class="sidebar-item  ">
+                            <a href="usuarios.html" class='sidebar-link'>
+                                <i data-feather="user-plus" width="20"></i> 
+                                <span>Usuarios</span>
+                            </a>
+                        </li>
+                    </div>
+                        <li class='sidebar-title'>OTROS</li>
+                        <li class="sidebar-item  ">
+                            <a href="ajustes.html" class='sidebar-link'>
+                                <i data-feather="settings" width="20"></i> 
+                                <span>Ajustes</span>
+                            </a>
+                        </li>
+
+              </ul> 
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>    
+        </div>
+
+
+        <div id="main">
+            <nav class="navbar navbar-header navbar-expand navbar-light">
+                <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+                <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+
+                        
+
+                     <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                <div class="avatar bg-warning me-3 mr-1">
+                                    <span class="avatar-content">U</span>
+                                    <span class="avatar-status bg-success"></span>
+                                </div>
+                                <div class="d-none d-md-block d-lg-inline-block">
+                                     <h5 class="mb-1" id="txtName"></h5>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
+                                <a class="dropdown-item active" href="#"><i data-feather="mail"></i> Messages</a>
+                                <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" id="btnLogout"><i data-feather="log-out"></i> Logout</a>
+                            </div>
+                             </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="main-content container-fluid">
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-12 col-md-6 order-md-1 order-last">
+                                <h3>PRODUCTOS</h3>
+                            </div>
+                            <div class="col-12 col-md-6 order-md-2 order-first">
+                                <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="inicio.html">Inicio</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Agregar productos </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <section id="multiple-column-form">
+                        <div class="row match-height">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Seleccione el distribuidor.</h4>
+                                    </div>
+                                    <div class="card-content">
+                                         <div class="card-body">
+                                         <form class="form">
+                                             <div class="row">
+                                                    <div class="col-md-4 col-8">
+                                                            <h6>DISTRIBUIDOR</h6>
+                                                            <div class="input-group mb-3 ">
+                                                               <select class="nieve form-select border border-secondary" id="mySelect">
+                                                               <option value="">Seleccione...</option>
+                                                               </select>
+                                                                <label class="input-group-text  border border-secondary" for="inputGroupSelect01"> <i data-feather="smartphone"></i></label>
+                                                                </div>
+                                                              
+                                                </div>
+
+                                              
+                                          </div>
+                                        </form>
+                                       </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section id="multiple-column-form">
+                    <div class="row match-height">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header"> 
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form class="form">
+                                            <div class="row">
+                                                  <div class="col-md-4 col-8">
+                                                            <h6>ARTICULO</h6>
+                                                            <div class="input-group mb-3 ">
+                                                               <select class="nieve form-select border border-secondary" id="mySelect2">
+                                                               <option value="">Seleccion</option>
+                                                               </select>
+                                                                <label class="input-group-text  border border-secondary" for="inputGroupSelect01"> <i data-feather="smartphone"></i></label>
+                                                                </div>
+                                                              
+                                                </div>
+                                                <div class="col-md-4 col-8"></div>
+                                                 <div class="col-md-4 col-8">
+                                                            <h6>GARANTÍA</h6>
+                                                            <div class="input-group mb-3 ">
+                                                               <select class="nieve form-select border border-secondary" id="garantia">
+                                                               <option value="noaplica">No aplica</option>
+                                                               <option value="3meses">3 Meses</option>
+                                                                <option value="6meses">6 Meses</option>
+                                                                <option value="9meses">9 Meses</option>
+                                                                <option value="unaño">Un año</option>
+                                                            
+                                                               </select>
+                                                                <label class="input-group-text  border border-secondary" for="inputGroupSelect01"> <i data-feather="smartphone"></i></label>
+                                                                </div>
+                                                              
+                                                </div>
+
+
+
+                                                <div class="col-md-6 col-12">
+                                                   <div class="form-group has-icon-left">
+                                                    <label for="email-id-icon">Código</label>
+                                                    <div class="position-relative">
+                                                        <input type="text" class="form-control" placeholder="Código" id="codigo">
+                                                        <div class="form-control-icon">
+                                                            <i data-feather="clipboard"></i>
+                                                        </div>
+                                    
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                   <div class="form-group has-icon-left">
+                                                    <label for="email-id-icon">Modelo</label>
+                                                    <div class="position-relative">
+                                                        <input type="text" class="form-control" placeholder="Modelo" id="modelo">
+                                                        <div class="form-control-icon">
+                                                            <i data-feather="clipboard"></i>
+                                                        </div>
+                                    
+                                                    </div>
+                                                   </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-12">
+                                                   <div class="form-group has-icon-left">
+                                                    <label for="email-id-icon">Marca</label>
+                                                    <div class="position-relative">
+                                                        <input type="text" class="form-control" placeholder="Marca" id="marca">
+                                                        <div class="form-control-icon">
+                                                            <i data-feather="clipboard"></i>
+                                                        </div>
+                                    
+                                                    </div>
+                                                   </div>
+                                                </div>
+
+                                                <div class="col-md-3 col-9">
+                                                   <div class="form-group has-icon-left">
+                                                    <label for="email-id-icon">Stock</label>
+                                                    <div class="position-relative">
+                                                        <input  type="number" class="form-control" placeholder="Stock" id="stock">
+                                                        <div class="form-control-icon">
+                                                            <i data-feather="clipboard"></i>
+                                                        </div>
+                                    
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-3 col-9">
+                                                   <div class="form-group has-icon-left">
+                                                    <label for="email-id-icon">Descuento</label>
+                                                    <div class="position-relative">
+                                                        <input type="number" class="form-control" placeholder="Ingrese el descuento " id="descuento" oninput="calcularDescuento()">
+                                                        <div class="form-control-icon">
+                                                            % 
+                                                        </div>
+                                    
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-3 col-9">
+                                                   <div class="form-group has-icon-left">
+                                                    <label for="email-id-icon">Precio compra/normal</label>
+                                                    <div class="position-relative">
+                                                        <input type="number" class="form-control" placeholder="0.00" id="preciocompra" oninput="calcularDescuento()" >
+                                                        <div class="form-control-icon">
+                                                            <i data-feather="dollar-sign"></i>
+                                                        </div>
+                                    
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-3 col-9">
+                                                   <div class="form-group has-icon-left">
+                                                    <label for="email-id-icon">Precio venta</label>
+                                                    <div class="position-relative">
+                                                        <input type="number" class="form-control" placeholder="Precio venta" id="precioventa" disabled>
+                                                        <div class="form-control-icon">
+                                                            <i data-feather="dollar-sign"></i>
+                                                        </div>
+                                    
+                                                    </div>
+                                                   </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-12">
+                                                   <div class="form-group has-icon-left">
+                                                    <label for="email-id-icon">Descripción</label>
+                                                    <div class="position-relative">
+                                                        <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción"></textarea>
+                        
+                                                    </div>
+                                                   </div>
+                                                </div>
+                                                 <div class="col-md-6 col-12"></div>
+                                                 <div class="col-md-6 col-12"></div>
+
+
+
+
+                                                
+
+
+                       
+
+
+
+
+
+
+                                                   </div>
+                                               </form>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </section>  
+                       <div class="col-md-6 col-12">
+                                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                    <button type="submit" class="btn btn-secondary round mr-1 mb-1 float-right" id="btnSavedis">GUARDAR </button>
+                                                    </div>  
+                                                </div>  
+ 
+                                                
+  <div class="alert alert-danger" role="alert" id="alert" style=" margin: 5px; display: none;">Se guardo correctamente </div>
+
+
+
+</div> 
+           
+    </div>
+</div>
+
+      <script>
+  function calcularDescuento() {
+      var precioOriginal = document.getElementById("preciocompra").value;
+      var porcentajeDescuento = document.getElementById("descuento").value;
+
+      // Calcula el monto de descuento
+      var descuento = precioOriginal * (porcentajeDescuento / 100);
+
+      // Resta el descuento al precio original
+      var precioConDescuento = precioOriginal - descuento;
+
+      // Asigna el valor calculado a las cajas de texto
+      document.getElementById("precioventa").value = precioConDescuento.toFixed(2);
+      
+      
+    }
+
+  </script>
+   <script src="com/assets/js/feather-icons/feather.min.js"></script>
+    <script src="com/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="com/assets/js/app.js"></script>
+    
+    <script src="com/assets/js/main.js"></script>
+     <script src="./home.js"></script>
+     <script src="./productos.js"></script>
+</body>
+</html>

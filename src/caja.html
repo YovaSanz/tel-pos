@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>
+            SEGUIMIENTO DE CREDITOS Y APARTADOS
+        </title>
+        <link href="com/assets/css/bootstrap.css" rel="stylesheet"></link>
+        <link href="com/assets/vendors/chartjs/Chart.min.css" rel="stylesheet"></link>
+        <link href="com/assets/vendors/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet"></link>
+        <link href="com/assets/css/app.css" rel="stylesheet"></link>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body>
+        <div id="app">
+            <div class="active" id="sidebar">
+                <div class="sidebar-wrapper active">
+                    <div class="sidebar-header">
+                        <img alt="" src="com/assets/images/telcel.png" srcset="">
+                        </img>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul class="menu">
+                            <li class="sidebar-title">
+                                SERVICIOS
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="ventacontado.html">
+                                    <i data-feather="shopping-cart" width="20">
+                                    </i>
+                                  <span>
+                                    Venta
+                                  </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item has-sub">
+                                <a class="sidebar-link" href="#">
+                                  <i data-feather="archive" width="20">
+                                  </i>
+                                  <span>Credito y Apartado</span>
+                                </a>
+                                <ul class="submenu">
+                                  <li>
+                                    <a href="ventacredito.html">
+                                      <i data-feather="check-circle" width="20">
+                                      </i>
+                                      <span>
+                                        Generar
+                                      </span>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="seguimiento.html">
+                                      <i data-feather="smartphone" width="20">
+                                      </i>
+                                      <span>
+                                        Seguimiento
+                                      </span>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="reparaciones.html">
+                                    <i data-feather="loader" width="20">
+                                    </i>
+                                    <span>
+                                        Reparaciones
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item active">
+                                <a class="sidebar-link" href="caja.html">
+                                    <i data-feather="inbox" width="20">
+                                    </i>
+                                    <span>
+                                        Caja
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-title">
+                                ALTAS
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link" href="productos.html">
+                                    <i data-feather="tablet" width="20">
+                                    </i>
+                                    <span>
+                                        Productos
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item ">
+                                <a class="sidebar-link" href="indexdistri.html">
+                                    <i data-feather="truck" width="20">
+                                    </i>
+                                    <span>
+                                        Distribuidor
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item ">
+                                <a class="sidebar-link" href="clientes.html">
+                                    <i data-feather="users" width="20">
+                                    </i>
+                                    <span>
+                                        Clientes
+                                    </span>
+                                </a>
+                            </li>
+                            <div id="privilegio_admin">
+                                <li class="sidebar-title">
+                                    PERSONAL
+                                </li>
+                                <li class="sidebar-item ">
+                                    <a class="sidebar-link" href="usuarios.html">
+                                        <i data-feather="user-plus" width="20">
+                                        </i>
+                                        <span>
+                                            Usuarios
+                                        </span>
+                                    </a>
+                                </li>
+                            </div>
+                            <li class="sidebar-title">
+                                OTROS
+                            </li>
+                            <li class="sidebar-item ">
+                                <a class="sidebar-link" href="ajustes.html">
+                                    <i data-feather="settings" width="20">
+                                    </i>
+                                    <span>
+                                        Ajustes
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="sidebar-toggler btn x">
+                        <i data-feather="x">
+                        </i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="main">
+                <nav class="navbar navbar-header navbar-expand navbar-light">
+                    <a class="sidebar-toggler" href="#">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </a>
+                    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="btn navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle nav-link-lg nav-link-user" data-toggle="dropdown" href="#">
+                                    <div class="avatar bg-warning me-3 mr-1">
+                                        <span class="avatar-content">U</span>
+                                        <span class="avatar-status bg-success"></span>
+                                    </div>
+                                    <div class="d-none d-md-block d-lg-inline-block">
+                                        <h5 class="mb-1" id="txtName"></h5>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="ajustes.html"><i data-feather="settings"></i> Ajustes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" id="btnLogout"><i data-feather="log-out"></i> Cerrar Sesion</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+
+                <div class="main-content container-fluid">
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-12 col-md-6 order-md-1 order-last">
+                                <h3>Corte de Caja</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+
+                                    
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Entrada de Efectivo  <i data-feather="plus-square"></i></h4>
+                                                        
+                                                            <div class="form-body">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-6">
+                                                                        <label>Entrada de Dinero (Cambio)</label>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group has-icon-left">
+                                                                            <div class="position-relative">
+                                                                                <input type="number" class="form-control" value="0.00" id="txtEntradasDinero" disabled>
+                                                                                <div class="form-control-icon">
+                                                                                    <i data-feather="dollar-sign"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label>Dinerio Inicial en Caja</label>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group has-icon-left">
+                                                                            <div class="position-relative">
+                                                                                <input type="number" class="form-control" value="0.00" id="txtDineroInicial" disabled>
+                                                                                <div class="form-control-icon">
+                                                                                    <i data-feather="dollar-sign"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+
+                                                        <div class="card-footer d-flex justify-content-end">
+                                                            <p class="fs-5 bolder">TOTAL:  </p>
+                                                            <p class="fw-bold text-decoration-underline">  <i data-feather="dollar-sign"></i> <span id="txtEntradaEfectivoTotal"></span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                        </div>
+
+
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Dinerio en Caja</h4>
+                                                        
+
+                                                            <div class="form-body">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-6">
+                                                                        <label><i data-feather="plus-square"></i>  Ventas en efectivo</label>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group has-icon-left">
+                                                                            <div class="position-relative">
+                                                                                <input type="number" class="form-control" value="0.00" id="txtVentas" disabled>
+                                                                                <div class="form-control-icon">
+                                                                                    <i data-feather="dollar-sign"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label><i data-feather="plus-square"></i>  Entradas</label>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group has-icon-left">
+                                                                            <div class="position-relative">
+                                                                                <input type="number" class="form-control" value="0.00" id="txtEntradas" disabled>
+                                                                                <div class="form-control-icon">
+                                                                                    <i data-feather="dollar-sign"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-6">
+                                                                        <label><i data-feather="minus-square"></i> Pago a Proveedores</label>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group has-icon-left">
+                                                                            <div class="position-relative">
+                                                                                <input type="number" class="form-control" value="0.00" id="txtSalidaDinero" disabled>
+                                                                                <div class="form-control-icon">
+                                                                                    <i data-feather="dollar-sign"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+
+                                                        <div class="card-footer d-flex justify-content-end py-0">
+                                                            <p class="fs-5 bolder">TOTAL:  </p>
+                                                            <p class="fw-bold text-decoration-underline">  <i data-feather="dollar-sign"></i> <span id="txtEnCajaTotal">0.00</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="row">
+
+                                        <!--<div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">TOTAL</h4>
+                                                        
+
+                                                            <div class="form-body">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-6">
+                                                                        <label>Efectivo</label>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group has-icon-left">
+                                                                            <div class="position-relative">
+                                                                                <input type="number" class="form-control" placeholder="2,630.00" id="first-name-icon" disabled>
+                                                                                <div class="form-control-icon">
+                                                                                    <i data-feather="dollar-sign"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label>Pagos de clientes</label>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group has-icon-left">
+                                                                            <div class="position-relative">
+                                                                                <input type="number" class="form-control" placeholder="0.00" id="first-name-icon" disabled>
+                                                                                <div class="form-control-icon">
+                                                                                    <i data-feather="dollar-sign"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-6">
+                                                                        <label>Pagos a Proveedores</label>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group has-icon-left">
+                                                                            <div class="position-relative">
+                                                                                <input type="number" class="form-control" placeholder="1,500.00" id="first-name-icon" disabled>
+                                                                                <div class="form-control-icon">
+                                                                                    <i data-feather="dollar-sign"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+
+                                                        <div class="card-footer d-flex justify-content-end py-0">
+                                                            <p class="fs-5 bolder">TOTAL:  </p>
+                                                            <p class="fw-bold text-decoration-underline">  <i data-feather="dollar-sign"></i> <span>0.00</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div> -->
+
+
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+
+                                                        <button class="btn icon icon-left btn-outline-secondary mr-3 mt-2"> <i data-feather="scissors"></i> Hacer Corte de Caja</button>
+                                                        <button class="btn icon icon-left btn-outline-primary ml-2 mt-2"> <i data-feather="printer"></i> Imprimir Corte</button>
+                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <script id="icono" src="com/assets/js/feather-icons/feather.min.js"></script>
+        <script src="com/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="com/assets/js/app.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+        <script src="com/assets/js/main.js"></script>
+
+        <script src="./home.js"></script>
+        <script src="./caja.js"></script>
+    </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif}
+        @media print {
+            @page {
+            size: auto;
+            }
+
+            table {
+                font-size: 0.68rem;
+            }
+        }
+
+        @media screen and (max-width: 350px) {
+            p {
+                font-size: 0.7rem;
+            }
+            table {
+                font-size: 0.6rem;
+            }
+            th{
+                font-size: 0.5rem;
+            }
+        }
+
+        table{
+            text-align: center;
+        }
+
+        th {
+            border-bottom: 1px solid black; /* Agrega un borde inferior a las celdas de encabezado */
+        }
+
+        /* Dashed border */
+        hr.dashed {
+        border-top: 1px dashed;
+        border-bottom: none;
+        }
+
+        hr.dotted {
+        border-top: 1px dotted;
+        border-bottom: none;
+        }
+
+        hr.double {
+        border-top: 3px double;
+        border-bottom: none;
+        }
+
+        hr.gradient {
+        height: 3px;
+        border: none;
+        border-radius: 6px;
+        background: linear-gradient(
+            90deg,
+            rgba(13, 8, 96, 1) 0%,
+            rgba(9, 9, 121, 1) 11%,
+            rgba(6, 84, 170, 1) 31%,
+            rgba(0, 255, 113, 1) 100%
+        );
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div id="app">
+        <br/>
+        <dir style="align-items: center;">
+            <img WIDTH="85%" src="https://scontent.fcvj2-1.fna.fbcdn.net/v/t39.30808-6/269797627_100215119205461_82476391032041220_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=K9iz7a8E6HkAX-e3ezj&_nc_ht=scontent.fcvj2-1.fna&oh=00_AfD1meb4WTpGJ2PGsttUg3vqAEiuYnFThJ5ibXXRwwvtZA&oe=64F86D33" >
+        </dir>
+        <h1 id="NombreEmpresa" style="text-align: center;">Pro Phone</h1>
+        <p id="direccion"><b>Direccion: </b>C. Miguel Hidalgo 74-B, Centro, 41300 Tlapa, Gro.</p>
+        <br/>
+
+        <p>Fecha:<span id="fecha"></span> Hora:<span id="hora"></span></p>
+        <p>=====================================</p>
+
+        <div>
+            <table style="margin: 0 auto;" id="productos" WIDTH="90%">
+                <tr>
+                    <th>CANT</th>
+                    <th>DESCRIPCION</th>
+                    <th>PRECIO</th>
+                    <th>IMPORTE</th>
+                </tr>
+            </table>
+        </div>
+        
+    
+        <hr class="dashed">
+        <p>No. DE ARTICULOS: <span id="noArticulos"></span></p>
+
+        <h3 style="text-align: right; margin-right: 15px;"><strong>TOTAL:</strong> $<span id="total"></span></h3>
+        <h5>PAGO CON: $<span id="pagocon"></span></h5>
+        <h5>SU CAMBIO: $<span id="cambio"></span></h5>
+    
+        <br />
+
+        <p style="text-align: center;">GRACIAS POR SU COMPRA</p>
+
+        <br/>
+        <hr class="solid">
+        <br/>
+    </div>
+
+
+    <script>
+        async function productos() {
+            const infoVenta = await window.electronAPI.infoVenta();
+
+            const total = infoVenta[0].total;
+            const cambio = (infoVenta[0].cambio > 0) ? infoVenta[0].cambio : infoVenta[0].total;
+            const pagocon = (infoVenta[0].pagocon > 0) ? infoVenta[0].pagocon : 0.00;
+            const products = infoVenta[0].products;
+
+            const infoVentaQuery = infoVenta[1];
+
+            const fecha = new Date().toLocaleDateString();
+            const hora = infoVentaQuery[0][0].hora;
+
+            const tbProductos = document.getElementById('productos');
+            products.forEach(product => {
+                let tr = tbProductos.insertRow(-1);
+                tr.innerHTML = `
+                    <td>${product.cantidad}</td>
+                    <td>${product.descripcion}</td>
+                    <td>$${product.precio}</td>
+                    <td>$<span>${new Intl.NumberFormat('es-MX').format(product.cantidad * product.precio)}</span></td>
+                `
+            });
+
+            document.getElementById('total').innerText = total;
+            document.getElementById('pagocon').innerText = cambio;
+            document.getElementById('cambio').innerText = pagocon;
+            document.getElementById('fecha').innerText = fecha;
+            document.getElementById('hora').innerText = hora;
+        }
+        productos();
+    </script>
+</body>
+</html>
